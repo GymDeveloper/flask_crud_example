@@ -14,3 +14,18 @@ def insert_employee(name, last_name, email, position):
         )
     connection.commit()
     connection.close()
+
+
+def get_employees():
+    connection = get_connection_db()
+    # SELECT
+    # creo un array de employees
+    employees = []
+
+    with connection.cursor() as cursor:
+        cursor.execute(
+            "SELECT id, name, last_name, email, position FROM employees")
+        employees = cursor.fetchall()
+    connection.close()
+
+    return employees

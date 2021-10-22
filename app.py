@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-from controller import insert_employee
+from controller import insert_employee, get_employees
 
 # debo decirle a mi app que pueda cargar la carpeta tempates
 app = Flask(__name__, template_folder="templates")
@@ -8,7 +8,8 @@ app = Flask(__name__, template_folder="templates")
 # Esta la ruta raiz
 @app.route('/')
 def home():
-    return render_template('index.html')
+    employees = get_employees()
+    return render_template('index.html', employees=employees)
 
 
 @app.route('/crear')

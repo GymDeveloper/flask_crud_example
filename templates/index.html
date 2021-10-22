@@ -9,13 +9,32 @@
   <body>
     <section>
       <h1>Lista de empleados</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore
-        consectetur accusantium ipsam nam necessitatibus placeat eaque ipsum qui
-        corrupti, itaque et. Sequi et optio laudantium praesentium dolorem
-        repellat suscipit itaque?
-      </p>
       <a href="{{ url_for('create')}}">Crear empleado</a>
+
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Puesto</th>
+          </tr>
+          <tbody>
+            <!-- Tengo que recorrer la variable employees -->
+            {% for employee in employees %}
+            <tr>
+              <td>{{ employee[0] }} </td>
+              <td>{{ employee[1] }} </td>
+              <td>{{ employee[2] }} </td>
+              <td>{{ employee[3] }} </td>
+              <td>{{ employee[4] }} </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+
+        </thead>
+      </table>
     </section>
   </body>
 </html>
