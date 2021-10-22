@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <h1>Creación de un empleado</h1>
+      <form action="{{ url_for('store') }}" method="post">
+        <p>Nombre: <input type="text" name="name" /></p>
+        <p>Apellido: <input type="text" name="last_name" /></p>
+        <p>Email: <input type="text" name="email" /></p>
+        <p>Puesto: <input type="text" name="position" /></p>
+        <button type="submit">Guardar</button>
+      </form>
+    </section>
+  </body>
+</html>
